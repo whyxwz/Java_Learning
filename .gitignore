@@ -1,2 +1,4 @@
 .idea/
 build/
+.gradle/
+Java_Learning.iml
