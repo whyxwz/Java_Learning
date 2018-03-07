@@ -8,8 +8,8 @@ public class Test1 {
     public static void main(String[] args){
 
         System.out.println(Thread.currentThread().getName());
-        
-        System.out.println("helloworld");
+        String str = "helloworld";
+        System.out.println(str);
 
     }
 
