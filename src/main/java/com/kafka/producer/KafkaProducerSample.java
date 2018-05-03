@@ -36,7 +36,7 @@ public class KafkaProducerSample extends Thread {
     private Producer createProducer() {
         Properties properties = new Properties();
 
-        properties.put("bootstrap.servers", "172.25.2.77:9092,172.25.2.99:9092,172.25.2.109:9092");
+        properties.put("bootstrap.servers", "172.25.1.1:9092,172.25.1.101:9092,172.25.1.174:9092");
         //properties.put("bootstrap.servers", "192.168.0.112:9092,192.168.0.113:9092,192.168.0.114:9092");
         properties.put("acks", "all");
         properties.put("retries", 0);
@@ -56,7 +56,7 @@ public class KafkaProducerSample extends Thread {
 
 
     public static void main(String[] args) {
-        new KafkaProducerSample("testTopic").start();// 使用kafka集群中创建好的主题 test
+        new KafkaProducerSample("testTopi").start();// 使用kafka集群中创建好的主题 test
 
     }
 

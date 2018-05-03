@@ -38,10 +38,10 @@ public class KafkaConsumerSample extends Thread{
     private ConsumerConnector createConsumer() {
         Properties props = new Properties();
 
-        props.put("zookeeper.connect","172.25.2.77:2181,172.25.2.99:2181,172.25.2.109:2181");
+        props.put("zookeeper.connect","172.25.1.1:2181,172.25.1.101:2181,172.25.1.174:2181");
         //props.put("zookeeper.connect","192.168.0.112:2181,192.168.0.113:2181,192.168.0.114:2181");
 
-        props.put("group.id","jd-group");//消费组是什么概念？
+        props.put("group.id","jd-group-1");//消费组是什么概念？
 
         props.put("zookeeper.session.timeout.ms","60000");
         props.put("zookeeper.sync.time.ms","200");

@@ -7,8 +7,8 @@
     <!-- redis连接池(单例) -->
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool" destroy-method="close">
         <constructor-arg name="poolConfig" ref="jedisPoolConfig"/>
-        <constructor-arg name="host" value="172.25.2.99"/>
-        <constructor-arg name="port" value="16379"/>
+        <constructor-arg name="host" value="172.25.1.1"/>
+        <constructor-arg name="port" value="6379"/>
         <constructor-arg name="timeout" value="3000"/>
         <constructor-arg name="password" value="123456"/>
     </bean>
