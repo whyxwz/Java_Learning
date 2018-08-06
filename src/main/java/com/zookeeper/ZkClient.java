@@ -1,8 +1,6 @@
 package com.zookeeper;
 
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
@@ -12,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ZkClient implements Watcher{
 
-    private static CountDownLatch connectedSemaphore = new CountDownLatch(1);
+    public static CountDownLatch connectedSemaphore = new CountDownLatch(1);
 
     public static void main(String[] args) throws IOException {
 
@@ -29,6 +27,17 @@ public class ZkClient implements Watcher{
         }
 
         System.out.println("session established");
+
+        String path = null;
+        try {
+            path = zooKeeper.create("/testZk", "testZk".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL );
+        } catch (KeeperException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("node created : " + path);
 
 
     }
